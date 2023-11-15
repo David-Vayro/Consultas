@@ -23,8 +23,8 @@ public class Main {
 
 
         //Interfas que permite realizar operaciones
-    sistema.getRentalItems(rentalItems);
-    sistema.getCustomers(customer);
+    sistema.setRentalItems(rentalItems);
+    sistema.setCustomers(customer);
 
         Scanner sc = new Scanner(System.in);
 
@@ -39,10 +39,12 @@ public class Main {
             int option = sc.nextInt();
             if (option ==1){
                 sistema.showAllItems();
-                System.out.println("ingresa el id de la pelicula a rentar");
-            int movieID = sc.nextInt();
 
-
+                System.out.println("Ingrese su usuario");
+                String usuario = sc.next();
+                System.out.println("Ingrese el id de la Pelicula");
+                int pelicula = sc.nextInt();
+                //sistema.rentMovieToCustomer(usuario, pelicula);
 
             }if (option == 3){
                 sistema.showAllItems();
