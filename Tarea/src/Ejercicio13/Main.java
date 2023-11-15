@@ -43,8 +43,8 @@ public class Main {
                 System.out.println("Ingrese su usuario");
                 String usuario = sc.next();
                 System.out.println("Ingrese el id de la Pelicula");
-                int pelicula = sc.nextInt();
-                //sistema.rentMovieToCustomer(usuario, pelicula);
+                String pelicula = sc.next();
+                sistema.rentMovieToCustomer(usuario, pelicula);
 
             }if (option == 3){
                 sistema.showAllItems();

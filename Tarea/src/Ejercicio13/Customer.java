@@ -13,7 +13,7 @@ private ArrayList<RentalItem> rentedMovies;
     public Customer(String customerName, int customerID, List<RentalItem> rentedMovies) {
         this.customerName = customerName;
         this.customerID = customerID;
-        this.rentedMovies = new ArrayList<>();
+      this.rentedMovies = new ArrayList<>();
     }
 
     public String getCustomerName() {
@@ -42,10 +42,10 @@ private ArrayList<RentalItem> rentedMovies;
     public void  showCustomerDetails(){
         System.out.println("Nombre del usuario: " + this.customerName);
         System.out.println(" ID del usuario: " + this.customerID);
-       /* System.out.println("Lista de peliculas rentada: ");
+        System.out.println("Lista de peliculas rentada: ");
         for(RentalItem item: rentedMovies){
             System.out.println(" // " + item.getItemName());
-        }*/
+        }
     }
 
 }

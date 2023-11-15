@@ -10,6 +10,7 @@ public class MovieRentalsystem {
 
     private List<RentalItem> rentalItems;
     private List<Customer> customers;
+
     public MovieRentalsystem() {
         this.rentalItems = new ArrayList<>();
         this.customers = new ArrayList<>();
@@ -41,29 +42,29 @@ public class MovieRentalsystem {
     public void registerCustomer(Customer customer) {
         customers.add(customer);
     }
-/*
+
     //Metodo para rentar una pelicula al cliente
     public void rentMovieToCustomer(String pelicula, String customer) {
         Customer customerFound = null;
-        for(Customer customer1: this.customers){
-            if(customer1.getCustomerName().equals(customer)){
+        for (Customer customer1 : this.customers) {
+            if (customer1.getCustomerName().equals(customer)) {
                 customerFound = customer1;
                 break;
             }
         }
-        if(customerFound == null){
+        if (customerFound == null) {
             System.out.println("Usuario no encontrado");
             return;
         }
 
         RentalItem itemFound = null;
-        for(RentalItem item1: this.rentalItems){
-            if(item1.getItemName().equals(rentalItems)){
+        for (RentalItem item1 : this.rentalItems) {
+            if (item1.getItemName().equals(rentalItems)) {
                 itemFound = item1;
                 break;
             }
         }
-        if(itemFound == null){
+        if (itemFound == null) {
             System.out.println("Pelicula no encontrada");
             return;
         }
@@ -81,39 +82,40 @@ public class MovieRentalsystem {
     //Metodo para procesar la devolucion de una pelicula rentada
     public void returnMovie(String pelicula, String customer) {
         Customer customerFound = null;
-        for(Customer customer1: this.customers){
-            if(customer1.getCustomerName().equals(customer)){
+        for (Customer customer1 : this.customers) {
+            if (customer1.getCustomerName().equals(customer)) {
                 customerFound = customer1;
                 break;
             }
         }
-        if(customerFound == null){
+        if (customerFound == null) {
             System.out.println("Usuario no encontrado");
             return;
         }
 
         RentalItem itemFound = null;
-        for(RentalItem item1: this.rentalItems){
-            if(item1.getItemName().equals(rentalItems)){
+        for (RentalItem item1 : this.rentalItems) {
+            if (item1.getItemName().equals(rentalItems)) {
                 itemFound = item1;
                 break;
             }
         }
-        if(itemFound == null){
+        if (itemFound == null) {
             System.out.println("Pelicula no encontrada");
             return;
+        }
+            if (customerFound.getRentedMovies().contains(itemFound)) {
+                itemFound.setAvailable(true);
+                customerFound.getRentedMovies().remove(itemFound);
+                System.out.println("Pelicula " + itemFound.getItemName() + " devuelta por el usuario " + customerFound.getCustomerName());
+            } else {
+                System.out.println("El usuario " + customerFound.getCustomerName() + " no tiene rentada esta pelicula.");
 
-        if (customerFound.getRentedMovies().contains(itemFound)) {
-            itemFound.setAvailable(true);
-            customerFound.getRentedMovies().remove(itemFound);
-            System.out.println("Pelicula " + itemFound.getItemName() + " devuelta por el usuario " + customerFound.getCustomerName());
-        } else {
-            System.out.println("El usuario " + customerFound.getCustomerName() + " no tiene rentada esta pelicula.");
+            }
 
         }
 
-    }
-*/
+
     //metood para mostrar los items disponibles
     public void showAllItems() {
         for (RentalItem item : this.rentalItems) {
@@ -131,10 +133,10 @@ public class MovieRentalsystem {
         }
     }
 
-
-
-
 }
+
+
+
 
 
 
