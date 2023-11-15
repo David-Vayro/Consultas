@@ -18,8 +18,8 @@ public class Main {
         //creacion de usuarios
         List<Customer> customer = List.of(
                 new Customer("Rodrigo",1,null),
-                new Customer("mateo",2,null),
-                new Customer("pedro",3,null));
+                new Customer("Mateo",2,null),
+                new Customer("Pedro",3,null));
 
 
         //Interfas que permite realizar operaciones
@@ -42,13 +42,25 @@ public class Main {
 
                 System.out.println("Ingrese su usuario");
                 String usuario = sc.next();
-                System.out.println("Ingrese el id de la Pelicula");
+                System.out.println("Ingrese el titulo de la Pelicula");
                 String pelicula = sc.next();
-                sistema.rentMovieToCustomer(usuario, pelicula);
+                sistema.rentMovieToCustomer(pelicula, usuario);
 
-            }if (option == 3){
+            }
+            if (option ==2){
                 sistema.showAllItems();
-            }  if (option == 4){
+
+                System.out.println("Ingrese su usuario");
+                String usuario = sc.next();
+                System.out.println("Ingrese el titulo de la Pelicula que devolvera");
+                String pelicula = sc.next();
+                sistema.returnMovie(pelicula, usuario);
+
+            }
+            if (option == 3){
+                sistema.showAllItems();
+            }
+            if (option == 4){
                 sistema.showAllCustomers();
             }
 

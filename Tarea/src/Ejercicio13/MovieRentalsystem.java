@@ -44,10 +44,10 @@ public class MovieRentalsystem {
     }
 
     //Metodo para rentar una pelicula al cliente
-    public void rentMovieToCustomer(String pelicula, String customer) {
+    public void rentMovieToCustomer(String itemName, String customerName) {
         Customer customerFound = null;
         for (Customer customer1 : this.customers) {
-            if (customer1.getCustomerName().equals(customer)) {
+            if (customer1.getCustomerName().equals(customerName)) {
                 customerFound = customer1;
                 break;
             }
@@ -59,7 +59,7 @@ public class MovieRentalsystem {
 
         RentalItem itemFound = null;
         for (RentalItem item1 : this.rentalItems) {
-            if (item1.getItemName().equals(rentalItems)) {
+            if (item1.getItemName().equals(itemName)) {
                 itemFound = item1;
                 break;
             }
@@ -80,10 +80,10 @@ public class MovieRentalsystem {
 
 
     //Metodo para procesar la devolucion de una pelicula rentada
-    public void returnMovie(String pelicula, String customer) {
+    public void returnMovie(String itemName, String customerName) {
         Customer customerFound = null;
         for (Customer customer1 : this.customers) {
-            if (customer1.getCustomerName().equals(customer)) {
+            if (customer1.getCustomerName().equals(customerName)) {
                 customerFound = customer1;
                 break;
             }
@@ -95,7 +95,7 @@ public class MovieRentalsystem {
 
         RentalItem itemFound = null;
         for (RentalItem item1 : this.rentalItems) {
-            if (item1.getItemName().equals(rentalItems)) {
+            if (item1.getItemName().equals(itemName)) {
                 itemFound = item1;
                 break;
             }
